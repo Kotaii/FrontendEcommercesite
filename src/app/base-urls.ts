@@ -1,6 +1,6 @@
 export class BaseUrls {
 
-  public static readonly BASE_HREF: string = "http://localhost:8080";
+  public static readonly BASE_HREF: string = "http://localhost:9090";
 
   public static readonly USER_GROUPURL: string = "users";
   public static readonly SHIPMENT_GROUPURL: string = "shipments";

@@ -11,7 +11,7 @@
               </p>
               <p class="card-text d-flex flex-column mr-4">
                 <span class="text-sm">Total</span>
-                <span class="font-weight-bold">{{ order['totalAmount'] | currency:'INR':'symbol' }}</span>
+                <span class="font-weight-bold">{{ order['totalAmount'] | currency:'USD':'symbol' }}</span>
               </p>
               <p class="card-text d-flex flex-column flex-grow-1">
                 <span class="text-sm">Ship To</span>
@@ -20,7 +20,7 @@
               <p class="card-text d-flex flex-column mr-4">
                 <span class="text-sm">Order ID: <strong>#{{ order['orderId'] }}</strong></span>
                 <a type="button" class="btn btn-link p-0 text-left">View Order Details</a>
-                <!-- <span class="font-weight-bold">{{ order['totalAmount'] | currency:'INR':'symbol' }}</span> -->
+                <!-- <span class="font-weight-bold">{{ order['totalAmount'] | currency:'USD':'symbol' }}</span> -->
               </p>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <p class="card-text mb-1">
               {{ prd['productDescription'] }}
             </p>
-            <p class="card-text text-danger mb-1">{{ prd['price'] | currency:'INR':'symbol' }}</p>
+            <p class="card-text text-danger mb-1">{{ prd['price'] | currency:'USD':'symbol' }}</p>
           </div>
         </div>
       </div>

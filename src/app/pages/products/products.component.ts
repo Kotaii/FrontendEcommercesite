@@ -43,8 +43,8 @@ export class ProductsComponent implements OnInit {
             this.tempProducts = products;
           }
           if(categories.length !== 0) {
-            this.categories = categories;
             this.categories.splice(0, 0, { categoryId: "", categoryName: "All" });
+            this.categories = categories;
           }
         },
         error: (error) => {

@@ -35,7 +35,7 @@
                 </p>
                 <p class="card-text m-0 mb-3">
                   <span class="text-muted mr-2">Price:</span>
-                  <span class="font-weight-bold">{{ product["price"] | currency:'INR':'symbol' }}</span>
+                  <span class="font-weight-bold">{{ product["price"] | currency:'USD':'symbol' }}</span>
                 </p>
               </div>
 
@@ -62,7 +62,7 @@
           </p>
           <p class="card-text d-flex justify-content-between m-0 mb-2">
             <span class="text-muted">Total Price</span>
-            <span class="font-weight-bold">{{ totalPrice || 0 | currency:'INR':'symbol' }}</span>
+            <span class="font-weight-bold">{{ totalPrice || 0 | currency:'USD':'symbol' }}</span>
           </p>
         </div>
       </div>
