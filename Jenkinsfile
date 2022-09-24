@@ -7,7 +7,7 @@ pipeline {
         stage('Source') {
             steps {
                 // Get  code from a GitHub repository
-                git 'https://github.com/tuser6794/estore-end-user.git'
+                git 'https://github.com/latifb2022/estore-end-user.git'
 
                 // Run npm install
                 sh "npm install"
@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Containerize') {
+       /*  stage('Containerize') {
             steps {
 
                 // Run docker command to build a container
@@ -50,6 +50,6 @@ pipeline {
 
                 echo 'Deploy the App with Docker'
             }
-        }
+        } */
     }
 }
