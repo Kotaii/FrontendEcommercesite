@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-       /*  stage('Containerize') {
+        stage('Containerize') {
             steps {
 
                 // Run docker command to build a container
@@ -50,6 +50,6 @@ pipeline {
 
                 echo 'Deploy the App with Docker'
             }
-        } */
+        }
     }
 }
