@@ -46,7 +46,7 @@ pipeline {
             steps {
 
                 // Run the image in port 9191
-                sh "docker run -d -p 9191:81 estore-end-user"
+                sh "docker run -d -p 9191:80 estore-end-user"
 
                 echo 'Deploy the App with Docker'
             }

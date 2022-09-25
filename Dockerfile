@@ -19,5 +19,5 @@ FROM nginx:latest
 # Copy the build output for nginx contents
 COPY --from=build /usr/local/app/dist/estore-user-app /usr/share/nginx/html
 
-# Expose port 81
-EXPOSE 81
+# Expose port 80
+EXPOSE 80
