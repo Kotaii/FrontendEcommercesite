@@ -27,7 +27,7 @@ pipeline {
 
         stage('Build') {
             steps {
-              script { System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400"); }
+              //script { System.setProperty("org.jenkinsci.plugins.durabletask.BourneShellScript.HEARTBEAT_CHECK_INTERVAL", "86400"); }
               
                 // Run ng build command
                 sh "npm run build"
