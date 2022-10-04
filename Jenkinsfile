@@ -11,6 +11,7 @@ pipeline {
                 git 'https://github.com/latifb2022/estore-end-user.git'
 
                 // Run npm install
+                sh "sudo su"
                 sh "npm install"
 
                 echo 'Source Stage Finished'
