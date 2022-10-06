@@ -50,11 +50,11 @@ pipeline {
               
               // remove previous image and container
                 sh '''
-                    docker run -d \
+                    docker run --rm \
                     --name watchtower \
-                    --run-once \
                     -v /var/run/docker.sock:/var/run/docker.sock \
-                    containrrr/watchtower 
+                    containrrr/watchtower \
+                    --run-once
                 ''' 
 
                 // Run the image in port 9191
