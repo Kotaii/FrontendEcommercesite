@@ -47,6 +47,15 @@ pipeline {
 
         stage('Deploy') {
             steps {
+              
+              // remove previous image
+              sh """
+                docker ps -a \
+                  | awk '{ print \$1,\$2 }' \
+                  | grep imagename \
+                  | awk '{print \$1 }' \
+                  | xargs -I {} docker rm -f {}
+                 """
 
                 // Run the image in port 9191
                 sh "docker run -d -p 9191:80 estore-end-user"
