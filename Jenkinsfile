@@ -49,9 +49,7 @@ pipeline {
             steps {
               
               // remove previous image and container
-                script{
-                    stopByPort.sh 9191
-                }
+                 sh './stopByPort.sh 9191'
 
                 // Run the image in port 9191
                 sh "docker run -d -p 9191:80 estore-end-user"
