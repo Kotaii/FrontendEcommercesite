@@ -49,9 +49,11 @@ pipeline {
             steps {
 
                 // Run the image in port 9191
-                dir()
+                dir('/var/lib/jenkins/workspace/estore-end-user'){
+                    sh "./stopByPort.sh 9191"
+                }
                 sh "docker run -d -p 9191:80 estore-end-user"
-
+                
                 echo 'Deploy the App with Docker'
             }
         }
