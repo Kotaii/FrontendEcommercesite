@@ -47,6 +47,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
+
+                sh '''
+                /src/assets/stopByPort.sh 9191
+                '''
                 // Run the image in port 9191
                 sh "docker run -d -p 9191:80 estore-end-user"
 
