@@ -47,16 +47,6 @@ pipeline {
 
         stage('Deploy') {
             steps {
-              
-              // remove previous image and container
-                sh '''
-                    docker run --rm \
-                    --name watchtower \
-                    -v /var/run/docker.sock:/var/run/docker.sock \
-                    containrrr/watchtower \
-                    --run-once
-                ''' 
-
                 // Run the image in port 9191
                 sh "docker run -d -p 9191:80 estore-end-user"
 
