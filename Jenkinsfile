@@ -49,7 +49,12 @@ pipeline {
             steps {
               
               // remove previous image and container
-                 sh './stopByPort.sh 9191'
+                sh '''
+                    docker run -d \
+                    --name watchtower \
+                    -v /var/run/docker.sock:/var/run/docker.sock \
+                    containrrr/watchtower
+                ''' 
 
                 // Run the image in port 9191
                 sh "docker run -d -p 9191:80 estore-end-user"
