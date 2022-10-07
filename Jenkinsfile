@@ -52,7 +52,6 @@ pipeline {
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 containrrr/watchtower \
                 --run-once \
-                estore-end-user
                 '''
 
                 // Run the image in port 9191
