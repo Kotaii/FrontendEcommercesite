@@ -71,6 +71,8 @@ pipeline {
                 
         stage('Deploy') {
             steps {
+
+                sh "docker pull latifdev/estore-end-user:latest"
                 sh "docker run -d -p 9191:80 latifdev/estore-end-user:latest"
                 
                 echo 'Deploy the App with Docker'
