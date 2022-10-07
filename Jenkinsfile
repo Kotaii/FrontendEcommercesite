@@ -56,8 +56,7 @@ pipeline {
                 docker run --rm \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 containrrr/watchtower \
-                --run-once \
-                --cleanup
+                --run-once 
                 '''
 
                 // Run the image in port 9191
