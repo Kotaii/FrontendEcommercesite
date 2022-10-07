@@ -42,7 +42,7 @@ pipeline {
             steps {
 
                 // Run docker command to build a container
-                sh "docker build -t estore-end-user ."
+                sh "docker build -t estore-end-user . --name:estore-end-user"
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh "docker tag estore-end-user latifdev/estore-end-user"
                 sh "docker push latifdev/estore-end-user"
@@ -60,15 +60,15 @@ pipeline {
                 -e REPO_USER="latifdev" \
                 -e REPO_PASS="fpvlrt-4118/?" \
                 -v /var/run/docker.sock:/var/run/docker.sock \
-                containrrr/watchtower
+                containrrr/watchtower \
+                estore-end-user
                 '''
-                echo 'Deploy the App with Docker'
+                echo 'Update the Docker container with latest'
                 
             }
         }
                 
-        stage ('Deploy') {
-
+        stage('Deploy') {
             steps {
                 sh "docker run -d -p 9191:80 latifdev/estore-end-user:latest"
                 
