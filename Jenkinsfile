@@ -61,8 +61,8 @@ pipeline {
                 '''
 
                 // Run the image in port 9191
-            
-                sh "docker run -d -p 9191:80 estore-end-user"
+                sh "docker pull latifdev/estore-end-user:latest"
+                sh "docker run -d -p 9191:80 latifdev/estore-end-user"
                 
                 echo 'Deploy the App with Docker'
             }
