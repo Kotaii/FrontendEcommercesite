@@ -61,6 +61,7 @@ pipeline {
                 '''
 
                 // Run the image in port 9191
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh "docker pull latifdev/estore-end-user:latest"
                 sh "docker run -d -p 9191:80 latifdev/estore-end-user:latest"
                 
