@@ -40,6 +40,8 @@ pipeline {
 
                 // Run docker command to build a container
                 sh "docker build -t estore-end-user ."
+                sh "docker tag estore-end-user latifdev/estore-end-user"
+                sh "docker push latifdev/estore-end-user"
 
                 echo 'Containerizing the App with Docker'
             }
