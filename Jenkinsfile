@@ -43,6 +43,7 @@ pipeline {
 
                 // Run docker command to build a container
                 sh "docker build -t estore-end-user ."
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh "docker tag estore-end-user latifdev/estore-end-user"
                 sh "docker push latifdev/estore-end-user"
 
