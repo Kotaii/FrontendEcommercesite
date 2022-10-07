@@ -54,14 +54,13 @@ pipeline {
         stage('Deploy') {
             steps {
 
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                //sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                 sh '''
-                docker run --rm \
+                docker run -d \
                  -e REPO_USER="latifdev" \
                 -e REPO_PASS="fpvlrt-4118/?" \
                 -v /var/run/docker.sock:/var/run/docker.sock \
-                containrrr/watchtower \
-                --run-once 
+                containrrr/watchtower \ 
                 '''
 
                 // Run the image in port 9191
