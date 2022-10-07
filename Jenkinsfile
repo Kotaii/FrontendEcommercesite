@@ -55,7 +55,7 @@ pipeline {
             steps {
 
                 //sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker rm estore-end-user'
+                
                 sh '''
                 docker run -d \
                 -e REPO_USER="latifdev" \
