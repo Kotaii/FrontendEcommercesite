@@ -51,7 +51,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Update Docker') {
             steps {
 
                 //sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
@@ -62,10 +62,14 @@ pipeline {
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 containrrr/watchtower
                 '''
+                echo 'Deploy the App with Docker'
+                
+            }
+        }
+                
+        stage ('Deploy') {
 
-                // Run the image in port 9191
-                
-                
+            steps {
                 sh "docker run -d -p 9191:80 latifdev/estore-end-user:latest"
                 
                 echo 'Deploy the App with Docker'
