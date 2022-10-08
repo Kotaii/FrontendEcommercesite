@@ -5,7 +5,7 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('docker-creds')
 	}
     
-    //tools {nodejs "NodeJS"}
+    tools {nodejs "NodeJS"}
   
     stages {
         stage('Source') {
