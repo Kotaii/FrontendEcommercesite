@@ -62,7 +62,7 @@ pipeline {
                 -e REPO_PASS="fpvlrt-4118/?" \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 containrrr/watchtower \
-                estore-end-user
+                --debug
                 '''
                 echo 'Update the Docker container with latest'
                 
