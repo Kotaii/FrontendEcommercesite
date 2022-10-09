@@ -62,6 +62,7 @@ pipeline {
                 -e REPO_PASS="fpvlrt-4118/?" \
                 -v /var/run/docker.sock:/var/run/docker.sock \
                 containrrr/watchtower \
+                estore-end-user \
                 -i 30
                 '''
                 echo 'Update the Docker container with latest'
@@ -71,7 +72,7 @@ pipeline {
                 
         stage('Deploy') {
             steps {
-                sh "docker run -d -p 9292:80 docker.io/latifdev/estore-end-user:latest"               
+                sh "docker run --name estore-end-user -d -p 9292:80 latifdev/estore-end-user:latest"               
                 echo 'Deploy the App with Docker'
             }
         }
